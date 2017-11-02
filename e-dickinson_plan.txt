@@ -1,7 +1,8 @@
 Timeline:
 
 This week:
-	- Trevor will try to do annotations
+	- Trevor will start annotations (theme for all poems, ternaries for lines and overall for 100-500 poems)
+	- Trevor will start cleaning ED dataset
 	- Ian will get the other csv file ready for use
 		* upload the poem into neg file
 		* take equal number of e dickinson into pos file
