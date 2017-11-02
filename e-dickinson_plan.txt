@@ -1,0 +1,17 @@
+Timeline:
+
+This week:
+	- Trevor will try to do annotations
+	- Ian will get the other csv file ready for use
+		* upload the poem into neg file
+		* take equal number of e dickinson into pos file
+
+Next Week:
+	- Preliminary experiments Wed and Friday
+		* Running the CNN on the pos and neg data
+		* Run the affect lexicon on e dickinson (tentative)
+		* Run the ternary scores and take those scores to plot poem on a plane
+		  then run a K-nearest neighbors alg. to create a cluster
+		* Run the affect scores and take those scores and cluster poem based on
+		  affective profile
+
