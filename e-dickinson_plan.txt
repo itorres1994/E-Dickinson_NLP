@@ -1,3 +1,17 @@
+TASKS THIS WEEK:
+
+* finish complete poems cleanup (incl. generate BOW representation of each poem, BOW representation of corpus, all without punctuation)
+* create POS/NEG seed lists for initial test (from ED corpus)
+* select 300 poems for test set
+* run Turney to generate PMIs for test set
+* annotate poems by theme, use theme lookup table to colorize plot of poems by averaged PMI score.
+
+TWO PHASES:
+
+1. Calculate affect scores for words (PMIs against POS/NEG seed lists), calculate affect scores for poems, use AS to characterize corpus (clustering, ED average, etc.).
+2. Calculate cossim for words within ED test set, use along with cossims for words in other ED poems to determine thresholds for classifier. Once thresholds set, calculate cossim for unknown poem, classifier makes prediction as to poet using threshold scores.
+
+
 AFFECT SCORES:
 Affect Scores (AS) represent the affective associations of a word within a poetic corpus.
 Each word gets an AS calculated from global cossim over the entire corpus.
