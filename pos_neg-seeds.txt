@@ -1,0 +1,69 @@
+json = {
+
+	"pos_seeds": {
+		"heaven": {
+			"POS": "NNP",
+			"FREQ": 130
+		},
+		"summer": {
+			"POS": "NNP",
+			"FREQ": 85
+		}, 
+		"love": {
+			"POS": "NNP",
+			"FREQ": 66
+		},
+		"life": {
+			"POS": "NN",
+			"FREQ": 55
+		},
+		"new": {
+			"POS": "JJ",
+			"FREQ": 53
+		},
+		"grace" : {
+			"POS": "NNP",
+			"FREQ": 47
+		},
+		"delight": {
+			"POS": "NNP",
+			"FREQ": 36
+		},
+		"bliss": {
+			"POS": "NNP",
+			"FREQ": 33
+		},
+		"good": {
+			"POS": "JJ",
+			"FREQ": 29
+		},
+		"better": {
+			"POS": "JJR",
+			"FREQ": 22
+		},
+		"joy": {
+			"POS": "NNP",
+			"FREQ": 22
+		},
+		"glory": {
+			"POS": "NNP",
+			"FREQ": 21
+		},
+		"fame": {
+			"POS": "NNP",
+			"FREQ": 21
+		},
+		"smile": {
+			"POS": "NN",
+			"FREQ": 20
+		},
+		"happy": {
+			"POS": "JJ",
+			"FREQ": 19
+		},
+		"": {
+
+		}
+	}
+
+}

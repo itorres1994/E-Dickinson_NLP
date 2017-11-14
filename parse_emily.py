@@ -9,7 +9,7 @@ tagged_tokens = nltk.pos_tag(tokens)
 freq_dict = dict()
 
 for token, pos in tagged_tokens:
-    token_reg = token.lower().replace('-', '')
+    token_reg = token.lower().replace('-', '').replace('.', '')
     if not pos == 'CD' and not pos == 'IN' and not pos == 'EX' \
             and not pos == 'LS' and not pos == "TO" and not pos == 'SYM' \
             and not pos == '.' and not pos == 'DT' and not pos == ','\
@@ -24,13 +24,21 @@ for token, pos in tagged_tokens:
             and not token_reg == 'should' and not token_reg == 'would' and not token_reg == 'may' \
             and not token_reg == 'might' and not token_reg == 'must' and not token_reg == 'can' \
             and not token_reg == 'could' and not token_reg == "'":
-        key = token_reg, pos
+        key = token_reg
         if key in freq_dict:
-            freq_dict[key] = freq_dict[key] + 1
+            if pos in freq_dict[key]['FREQ']:
+                freq_dict[key]['FREQ'][pos] += 1
+            else:
+                freq_dict[key]['POS'].append(pos)
+                freq_dict[key]['FREQ'][pos] = 1
         else:
-            freq_dict[key] = 1
+            freq_dict[key] = {'POS': [pos],
+                              'FREQ': {
+                                  pos: 1
+                               }
+                              }
 
-sorted_freq = sorted(freq_dict.items(), key=lambda e: e[1], reverse=True)
+sorted_freq = sorted(freq_dict.items(), key=lambda e: sum(e[1]['FREQ'].values()), reverse=True)
 
 print('\n\n')
 
