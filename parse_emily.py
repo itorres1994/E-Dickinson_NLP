@@ -1,5 +1,6 @@
 import re
 import nltk
+import json
 
 f = open("edCompleteFormatted.txt", 'r').read()
 
@@ -81,6 +82,12 @@ for freq in sorted_word:
     print(freq, ":", sorted_word[freq])
 
 print(count_poem)
+
+with open('emily_freq.json', 'w') as f:
+
+    json.dump(sorted_word, f)
+
+print('Done')
 
 # for freq in sorted_freq:
 #     print(freq)
