@@ -1,5 +1,7 @@
 import re
 import nltk
+import json
+import pickle
 
 f = open("edCompleteFormatted.txt", 'r').read()
 
@@ -81,6 +83,16 @@ for freq in sorted_word:
     print(freq, ":", sorted_word[freq])
 
 print(count_poem)
+
+# with open('emily_freq.json', 'w') as f:
+#
+#     json.dump(sorted_word, f)
+
+pickle_out = open('emily_freq.pickle', 'wb')
+pickle.dump(sorted_word, pickle_out)
+pickle_out.close()
+
+print('Done')
 
 # for freq in sorted_freq:
 #     print(freq)
