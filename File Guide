@@ -1,0 +1,7 @@
+edCompleteNoDash: individual poems stripped of dashes. other punctuation untouched. directory truncated to 1000 files, check .zip for complete poem set.
+
+edCompleteSimple: individual poems stripped of all punctuation except apostrophes and made lowercase. directory truncated to 1000 files, check .zip for complete poem set.
+
+AS_dict.json, AS_dict.pickle: AS dictionary in this format: {k:v} = {poem number: (AS density over words found in sentiment dictionary, AS density over total word count in poem)}
+
+
