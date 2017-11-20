@@ -114,3 +114,68 @@ for item in sorted_as_dict:
         bins3[13] += 1
 
 print(bins3)
+
+# bins: [[-0.4, -0.35), [-0.35, -0.30), [-0.30, -0.25), [-0.20, -0.15), [-0.15, -0.10), [-0.10, -0.05), [0.05, 0.0),
+# [0.0, 0.05), [0.05, 0.10), [0.10, 0.15), [0.15, 0.20), [0.20, 0.25), [0.25, 0.3]]
+bins4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+for item in sorted_as_dict:
+    number = round(sorted_as_dict[item][0], 3)
+    if -0.4 <= number < -0.375:
+        bins4[0] += 1
+    elif -0.375 <= number < -0.35:
+        bins4[1] += 1
+    elif -0.35 <= number < -0.325:
+        bins4[2] += 1
+    elif -0.325 <= number < -0.3:
+        bins4[3] += 1
+    elif -0.3 <= number < -0.275:
+        bins4[4] += 1
+    elif -0.275 <= number < -0.25:
+        bins4[5] += 1
+    elif -0.25 <= number < -0.225:
+        bins4[6] += 1
+    elif -0.225 <= number < -0.2:
+        bins4[7] += 1
+    elif -0.2 <= number < -0.175:
+        bins4[8] += 1
+    elif -0.175 <= number < -0.15:
+        bins4[9] += 1
+    elif -0.15 <= number < -0.125:
+        bins4[10] += 1
+    elif -0.125 <= number < -0.1:
+        bins4[11] += 1
+    elif -0.1 <= number < -0.075:
+        bins4[12] += 1
+    elif -0.075 <= number < -0.05:
+        bins4[13] += 1
+    elif -0.05 <= number < -0.025:
+        bins4[14] += 1
+    elif -0.025 <= number < 0.0:
+        bins4[15] += 1
+    elif 0.0 <= number < 0.025:
+        bins4[16] += 1
+    elif 0.025 <= number < 0.05:
+        bins4[17] += 1
+    elif 0.05 <= number < 0.075:
+        bins4[18] += 1
+    elif 0.075 <= number < 0.1:
+        bins4[19] += 1
+    elif 0.1 <= number < 0.125:
+        bins4[20] += 1
+    elif 0.125 <= number < 0.175:
+        bins4[21] += 1
+    elif 0.175 <= number < 0.2:
+        bins4[22] += 1
+    elif 0.2 <= number < 0.225:
+        bins4[23] += 1
+    elif 0.225 <= number < 0.25:
+        bins4[24] += 1
+    elif 0.25 <= number < 0.275:
+        bins4[25] += 1
+    elif 0.275 <= number < 0.3:
+        bins4[26] += 1
+    else:
+        bins4[27] += 1
+
+print(bins4)
