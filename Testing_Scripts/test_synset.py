@@ -55,7 +55,11 @@ def pos_tagging():
         # add the tokenized poem with part of speech tag
         pos_tags.append(nltk.pos_tag(temp2))
         # add the word delimited poem to a list
-        poems_words.append(re.split('\s+', poem))
+        words = re.split('\s+', poem)
+
+        if '' in words:
+            words.remove('')
+        poems_words.append(words)
     return pos_tags, poems_words
 
 
@@ -212,6 +216,8 @@ def generate_synsets():
                     poem_syns.append(set_of_syns)
                 else:
                     poem_syns.append(set())
+            else:
+                poem_syns.append(set())
         syn_sets.append(poem_syns)
 
                         # print(unpack_synset(syn.name())[0], ':', make_synset_key(word), ':',
