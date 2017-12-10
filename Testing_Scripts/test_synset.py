@@ -224,6 +224,7 @@ def generate_synsets():
             # else:
             #     print(word)
     for i, poem in enumerate(poems_words):
+        print(poem)
         for j, word in enumerate(poem):
             print(word, ':', syn_sets[i][j])
             # print(word, ':', syn, '\n')
