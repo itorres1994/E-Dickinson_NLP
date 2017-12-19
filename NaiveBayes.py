@@ -22,7 +22,7 @@ def tokenize_doc(doc):
     """
     bow = defaultdict(float)
     tokens = doc.split()
-    lowered_tokens = map(lambda t: t.lower(), tokens)
+    lowered_tokens = map(lambda t: t.lower(), tokens)[1:]
     for token in lowered_tokens:
         bow[token] += 1.0
     return dict(bow)
@@ -151,9 +151,6 @@ class NaiveBayes:
         Returns the most frequent n tokens for documents with class 'label'.
         """
         return sorted(self.class_word_counts[label].items(), key=lambda (w,c): -c)[:n]
-
-    def all_n(self, label):
-        return self.class_word_counts[label].items()
 
     def p_word_given_label(self, word, label):
         """
