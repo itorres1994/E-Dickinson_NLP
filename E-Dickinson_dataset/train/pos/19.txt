@@ -1,6 +1,6 @@
 19
 
-a sepal petal and a thorn 
+a sepal  petal  and a thorn 
 upon a common summer's morn  
 a flask of 
 dew  
@@ -9,5 +9,5 @@ bee or two
 a 
 breeze  a caper in the trees  
 and 
-i'm a rose
+i'm a rose 
 

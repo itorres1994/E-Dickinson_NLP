@@ -6,8 +6,8 @@ with open('affect_tags.pickle', 'rb') as f:
     affect_tags = pickle.load(f)
 
 path_dir = './edCompleteSimple'
-out_dir = './training_ed'
-out2_dir = './testing_ed'
+out_dir = './E-Dickinson_dataset/train'
+out2_dir = './E-Dickinson_dataset/test'
 pos = 'pos'
 neg = 'neg'
 list_dir = os.listdir(path_dir)

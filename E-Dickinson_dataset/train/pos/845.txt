@@ -6,5 +6,5 @@ doom
 sufficient 
 fame  
 to perish in 
-her hand
+her hand 
 
