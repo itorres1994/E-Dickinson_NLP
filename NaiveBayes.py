@@ -152,6 +152,9 @@ class NaiveBayes:
         """
         return sorted(self.class_word_counts[label].items(), key=lambda (w,c): -c)[:n]
 
+    def all_n(self, label):
+        return self.class_word_counts[label].items()
+
     def p_word_given_label(self, word, label):
         """
         Implement me!
