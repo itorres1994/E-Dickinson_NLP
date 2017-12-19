@@ -2,6 +2,7 @@ from __future__ import division
 import sys,json,math
 import os
 import numpy as np
+from tqdm import tqdm
 from collections import defaultdict
 
 def prepare(poslist, neglist, dirname):
@@ -13,7 +14,7 @@ def prepare(poslist, neglist, dirname):
     
     prepped = []
 
-    for file in os.listdir(dirname):
+    for file in tqdm(os.listdir(dirname), desc="going through poems"):
         
         with open(dirname+"/"+file, 'r') as in_file:
             
