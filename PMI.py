@@ -15,34 +15,33 @@ def prepare(poslist, neglist, dirname):
 
     for file in os.listdir(dirname):
         
-        print(file)
         with open(dirname+"/"+file, 'r') as in_file:
             
             poem = in_file.read().split()
             poem = [x.lower() for x in poem]
-              
-            print("poem after reading in file", poem)
+
             for word in poem:    # ignore poem number
                 poem = ['POS_WORD' if x in poslist else x for x in poem]
                 poem = ['NEG_WORD' if x in neglist else x for x in poem]
-            print("poem after checking against lists", poem)
+
             prepped.append(poem)
 
     return prepped
                 
 def getCounts(poems):
     
-    # Takes list of list representation of tweets, returns defaultdict
-    # with {word: tweet count}. Also includes counts of tuples of each word
+    # Takes list of list representation of poems, returns defaultdict
+    # with {word: poems count}. Also includes counts of tuples of each word
     # with POS_WORD and NEG_WORD.
     
     counts = defaultdict(float)
     
     for poem in poems:
-        poem = set(poem)
+        poem = set(poem[1:])
         
         for word in poem:
-            if word != "POS_WORD" and word != "NEG_WORD" and word[:4] != "http":
+            if word != "POS_WORD" and word != "NEG_WORD":
+                
                 if "POS_WORD" in poem:
                     counts[(word, "POS_WORD")] += 1
                 if "NEG_WORD" in poem:
@@ -62,7 +61,7 @@ def calcPMI(counts, csize):
     ppos = counts["POS_WORD"]/csize
     pneg = counts["NEG_WORD"]/csize
     
-    for word in counts.keys():
+    for word in list(counts.keys()):
         
         if type(word) is not tuple:
             
