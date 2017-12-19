@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 def initialize_files():
     # Path to the poem files
-    path = '/home/ian/Documents/Repos/CS-585/E-Dickinson_NLP/edCompleteSimple'
+    path = '../edCompleteSimple'
     # Get the directory listing of the poem file directory
     files = os.listdir(path)
     # Concat the path to the directory to the file listing
@@ -233,8 +233,8 @@ def generate_synsets():
         print(poem)
         for j, word in enumerate(poem):
             print(word, ':', syn_sets[i][j])
-            # print(word, ':', syn, '\n')
-            # print(syn)
+            print(word, ':', syn, '\n')
+            print(syn)
         print('----------------------------------------------')
 
 
