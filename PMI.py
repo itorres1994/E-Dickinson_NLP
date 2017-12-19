@@ -4,30 +4,33 @@ import os
 import numpy as np
 from collections import defaultdict
 
-def prepare(poslist, neglist, filename):
+def prepare(poslist, neglist, dirname):
     
     # Takes a filename, positive wordlist, and negative wordlist
     # Removes @, #, and URLs from tweets and converts
     # poswords to POS_WORD and negwords to NEG_WORD.
-    # Returns list of list representation of tweets
+    # Returns list of list representation of poems
     
     prepped = []
-    
-    with open(filename,"r") as f_in:
-        for line in f_in:
-            line = line.split()
-            line = [x.lower() for x in line]
-            tweet = []
-            for word in line:
-                if word[0] != '@' and word[0] != '#':
-                    tweet.append(word)
-            tweet = ['POS_WORD' if x in poslist else x.lower() for x in tweet]
-            tweet = ['NEG_WORD' if x in neglist else x for x in tweet]
-            prepped.append(tweet)
-    
+
+    for file in os.listdir(dirname):
+        
+        print(file)
+        with open(dirname+"/"+file, 'r') as in_file:
+            
+            poem = in_file.read().split()
+            poem = [x.lower() for x in poem]
+              
+            print("poem after reading in file", poem)
+            for word in poem:    # ignore poem number
+                poem = ['POS_WORD' if x in poslist else x for x in poem]
+                poem = ['NEG_WORD' if x in neglist else x for x in poem]
+            print("poem after checking against lists", poem)
+            prepped.append(poem)
+
     return prepped
                 
-def getCounts(tweets):
+def getCounts(poems):
     
     # Takes list of list representation of tweets, returns defaultdict
     # with {word: tweet count}. Also includes counts of tuples of each word
@@ -35,14 +38,14 @@ def getCounts(tweets):
     
     counts = defaultdict(float)
     
-    for tweet in tweets:
-        tweet = set(tweet)
+    for poem in poems:
+        poem = set(poem)
         
-        for word in tweet:
+        for word in poem:
             if word != "POS_WORD" and word != "NEG_WORD" and word[:4] != "http":
-                if "POS_WORD" in tweet:
+                if "POS_WORD" in poem:
                     counts[(word, "POS_WORD")] += 1
-                if "NEG_WORD" in tweet:
+                if "NEG_WORD" in poem:
                     counts[(word, "NEG_WORD")] += 1
             
             counts[word] += 1
