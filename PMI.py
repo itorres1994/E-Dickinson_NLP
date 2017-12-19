@@ -61,7 +61,7 @@ def calcPMI(counts, csize):
     ppos = counts["POS_WORD"]/csize
     pneg = counts["NEG_WORD"]/csize
     
-    for word in counts.keys():
+    for word in list(counts.keys()):
         
         if type(word) is not tuple:
             
