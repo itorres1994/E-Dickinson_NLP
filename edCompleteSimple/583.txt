@@ -1,7 +1,7 @@
 583
 
 a 
-toad  can die of 
+toad can die of 
 light  
 death is the 
 common 
@@ -13,7 +13,7 @@ of
 earl and 
 midge 
 the privilege  
-why swagger  then  
+why swagger then 
 the 
 gnat's supremacy is large as 
 thine life  is a different 
@@ -26,5 +26,5 @@ naked of
 cask bare 
 rhine  
 which 
-ruby's mine 
+ruby's mine
 
